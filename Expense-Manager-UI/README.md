@@ -1,6 +1,6 @@
 # Expense-Manager-UI
 
-This is an UI application developed in Angular v7 which helps users to maintain and keep track of their expenses. It consumes the Expense-Manager-API.
+This is an UI application developed in **Angular v7** which helps users to maintain and keep track of their expenses. It consumes the Expense-Manager-API.
 
 ## Run and deploy
 
