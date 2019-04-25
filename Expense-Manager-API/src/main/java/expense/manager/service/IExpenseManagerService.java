@@ -1,6 +1,5 @@
 package expense.manager.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import expense.manager.model.DailyExpense;
