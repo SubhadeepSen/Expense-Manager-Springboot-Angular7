@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="color: #14807b;">Dashboard</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li [ngClass]="{ active: dailyMonthlyYearly === 'Daily' }">
+        <a (click)="onClickDailyExpense()" class="cursor-pointer">Daily</a>
+      </li>
+      <li [ngClass]="{ active: dailyMonthlyYearly === 'Monthly' }">
+        <a (click)="onClickMonthlyExpense()" class="cursor-pointer">Monthly</a>
+      </li>
+      <li [ngClass]="{ active: dailyMonthlyYearly === 'Yearly' }">
+        <a (click)="onClickYearlyExpense()" class="cursor-pointer">Yearly</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<app-daily *ngIf="dailyMonthlyYearly === 'Daily'"></app-daily>
+<app-monthly *ngIf="dailyMonthlyYearly === 'Monthly'"></app-monthly>
+<app-yearly *ngIf="dailyMonthlyYearly === 'Yearly'"></app-yearly>

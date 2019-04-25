@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="color: #14807b;">Expense</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li [ngClass]="{ active: addExpenseOrSetBudget === 'Add Expense' }">
+        <a (click)="onClickaddExpense()" class="cursor-pointer">Add Expense</a>
+      </li>
+      <li [ngClass]="{ active: addExpenseOrSetBudget === 'Set Budget' }">
+        <a (click)="onClickSetBudget()" class="cursor-pointer">Set Budget</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<app-add-expense *ngIf="addExpenseOrSetBudget === 'Add Expense'"></app-add-expense>
+<app-set-budget *ngIf="addExpenseOrSetBudget === 'Set Budget'"></app-set-budget>

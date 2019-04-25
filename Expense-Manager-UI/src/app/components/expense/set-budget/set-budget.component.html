@@ -1,0 +1,22 @@
+<div class="alert alert-success" *ngIf="isAdded">
+  <strong>Success!</strong> Your monthly budget limit has been set. <label class="close" (click) = "hideNotification();">X</label>
+</div>
+<div class="alert alert-danger" *ngIf="isError">
+  <strong>Oppps!</strong> {{errorMsg}} <label class="close" (click) = "hideNotification();">X</label>
+</div>
+
+<div class="form-group">
+  <label for="month">Month:</label>
+  <select class="form-control" id="month" [(ngModel)]="month">
+      <option *ngFor = 'let m of months'>{{m}}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="budgetLimit">Budget Limit:</label>
+  <input type="text" class="form-control" id="budgetLimit" [(ngModel)]="budgetLimit">
+</div>
+
+<div class="form-group" style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+    <button type="button" class="btn btn-primary" style="width: 50%; height: 50px;" id="setBudget" (click) = "onClickSetBudget()">Set Budget</button>
+</div>

@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-sm-5" [ngStyle]="{ 'padding-left': paddingLeft }">
+      <app-expense></app-expense>
+    </div>
+    <div class="col-sm-7" [ngStyle]="{ 'padding-left': paddingLeft }">
+      <app-dashboard></app-dashboard>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

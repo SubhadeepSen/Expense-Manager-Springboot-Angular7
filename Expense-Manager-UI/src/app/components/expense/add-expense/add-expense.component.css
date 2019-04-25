@@ -1,0 +1,7 @@
+.close{
+    opacity: inherit;
+    float: right;
+    font-size: initial;
+    cursor: pointer;
+    color: #d96868;
+}

@@ -1,0 +1,45 @@
+<div class="form-group">
+  <label for="year">Year:</label><label class="refresh" (click)="onChangeYear();"><span class="glyphicon glyphicon-refresh"></span></label>
+  <select class="form-control" id="year" [(ngModel)]="year" (change)="onChangeYear();">
+    <option *ngFor="let yr of years">{{ yr }}</option>
+  </select>
+</div>
+
+<div *ngIf = "expense?.length > 0">
+    <div class="row" style="margin: 0px; margin-bottom:15px; background-color: beige; padding: 10px;">
+      <div class="col-xs-4 col-sm-4">
+          <b>Year:</b><span>{{yearlyExpense.year}}</span>
+      </div>
+      <div class="col-xs-4 col-sm-4">
+          <b>Total:</b><span>{{yearlyExpense.totalExpense}}</span>
+      </div>
+    </div>
+    <div class="row" style="text-align: center;">
+        <div class="col-xs-4 col-sm-4">
+            <b>Month</b>
+        </div>
+        <div class="col-xs-4 col-sm-4">
+            <b>Budget Limit</b>
+        </div>
+        <div class="col-xs-4 col-sm-4">
+            <b>Total Expense</b>
+        </div>
+      </div>
+  <div *ngFor = "let monthlyExpense of yearlyExpense.monthlyExpenses">
+      <div class="row" style="text-align: center;">
+          <div class="col-xs-4 col-sm-4">
+              {{monthlyExpense.month}}
+          </div>
+          <div class="col-xs-4 col-sm-4" style="color: blue">
+              {{monthlyExpense.monthlyBadgetLimit}}
+          </div>
+          <div class="col-xs-4 col-sm-4" [ngStyle]="{'color': monthlyExpense.totalExpense > monthlyExpense.monthlyBadgetLimit ? 'red' : 'green'}">
+              {{monthlyExpense.totalExpense}}
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="alert alert-warning" *ngIf = "expense?.length === 0">
+  <strong>No record found!</strong>
+</div>

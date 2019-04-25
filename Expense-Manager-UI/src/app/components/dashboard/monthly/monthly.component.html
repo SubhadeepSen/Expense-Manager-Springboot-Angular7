@@ -1,0 +1,65 @@
+<div class="form-group">
+  <label for="month">Month:</label><label class="refresh" (click)="onChangeMonth();"><span class="glyphicon glyphicon-refresh"></span></label>
+  <select class="form-control" id="month" [(ngModel)]="month" (change)="onChangeMonth();">
+    <option *ngFor="let m of months">{{ m }}</option>
+  </select>
+</div>
+
+<div *ngIf = "monthlyExpenses?.length > 0">
+  <div *ngFor = "let monthlyExpense of monthlyExpenses">
+      <div class="row" style="text-align: center;">
+        <div class="col-xs-4 col-sm-4">
+            <b>Month</b>
+        </div>
+        <div class="col-xs-4 col-sm-4">
+            <b>Budget Limit</b>
+        </div>
+        <div class="col-xs-4 col-sm-4">
+            <b>Total Expense</b>
+        </div>
+      </div>
+      <div class="row" style="text-align: center;">
+          <div class="col-xs-4 col-sm-4">
+              {{monthlyExpense.month}}
+          </div>
+          <div class="col-xs-4 col-sm-4"  style="color: blue">
+              {{monthlyExpense.monthlyBadgetLimit}}
+          </div>
+          <div class="col-xs-4 col-sm-4"  [ngStyle]="{'color': isLimitCrossed == true ? 'red' : 'green'}">
+              {{monthlyExpense.totalExpense}}
+          </div>
+        </div>
+        <div class="row" style="text-align: center; margin-top: 15px;">
+            <div class="col-xs-3 col-sm-3">
+                <b>Date</b>
+            </div>
+            <div class="col-xs-3 col-sm-3">
+                <b>Expense</b>
+            </div>
+            <div class="col-xs-3 col-sm-3">
+                <b>Category</b>
+            </div>
+            <div class="col-xs-3 col-sm-3">
+                <b>Remark</b>
+            </div>
+        </div>
+        <div *ngFor = "let dailyExpense of monthlyExpense.dailyExpenses" class="row" style="text-align: center; margin-top: 5px; color: #7a7777">
+            <div class="col-xs-3 col-sm-3" >
+                {{dailyExpense.date}}
+            </div>
+            <div class="col-xs-3 col-sm-3">
+                {{dailyExpense.amount}}
+            </div>
+            <div class="col-xs-3 col-sm-3">
+                {{dailyExpense.category}}
+            </div>
+            <div class="col-xs-3 col-sm-3">
+                {{dailyExpense.remark}}
+            </div>
+        </div>
+  </div>
+</div>
+
+<div class="alert alert-warning" *ngIf = "monthlyExpenses?.length === 0">
+   <strong>No record found!</strong>
+</div>
