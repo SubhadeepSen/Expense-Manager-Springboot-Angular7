@@ -12,5 +12,8 @@ This application helps user to maintain and keep track of their expenses. User c
 
 `5.  View overall yearly expenses`
 
+## 
+
 Screenshot of UI: **Expense_Manager_UI.jpg**
+
 Screenshot of API: **Expense_Manager_API_Swagger.png**
