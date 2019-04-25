@@ -5,6 +5,7 @@ This is a sprinboot project (RESTFul web service) and provides the necessary end
 ## Run and deploy the service
 
 **mvn clean install**
+
 **mvn spring-boot:run**
 
 ## Swagger Documentation URL
