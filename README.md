@@ -12,6 +12,11 @@ This application helps user to maintain and keep track of their expenses. User c
 
 `5.  View overall yearly expenses`
 
+## Technology Used:
+**Springboot:** For the RESTFul Web Service
+
+**Angular 7:** For the UI
+
 ## 
 
 Screenshot of UI: **Expense_Manager_UI.jpg**
