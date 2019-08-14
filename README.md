@@ -31,11 +31,16 @@ This application helps user to maintain and keep track of their expenses. User c
 ## Instructions
 
 - Clone the repository
-- Open command prompt pointing to Message-Queue-Manager-API directory
+- Open command prompt pointing to Expense-Manager-API directory
 - Run ___mvn clean install___ to build the project
 - Change the directory to target
-- Run ___java -jar Expense-Manager-API-0.0.1-SNAPSHOT___ to deploy the application in embedded tomcat
+- Run ___java -jar Expense-Manager-API-0.0.1-SNAPSHOT___ to deploy the API in embedded tomcat
 - Open __http://localhost:8089/ExpenseManager/swagger-ui.html__ for API documentation
+
+- Open command prompt pointing to Expense-Manager-UI directory
+- Run ___npm install___ to build the project
+- Run ___npm start___ to deploy the UI application
+- Open __http://localhost:4200/ExpenseManager/__ to launch the Application
 
 ## 
 
